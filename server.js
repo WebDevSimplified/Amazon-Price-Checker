@@ -28,7 +28,7 @@ async function checkPrice() {
 	}
 }
 
-function sendEmail(subject, message) {
+async function sendEmail(subject, message) {
 	const email = {
 		to: 'kyle@webdevsimplified.com',
 		from: 'amazon-price-checker@example.com',
@@ -36,5 +36,5 @@ function sendEmail(subject, message) {
 		text: message,
 		html: message,
 	}
-	sgMail.send(email)
+	await sgMail.send(email)
 }
